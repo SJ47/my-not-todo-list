@@ -23,7 +23,9 @@ const TasksContainer = () => {
             }
             return task;
         });
-        setTasks(updatedTasks);
+        setTimeout(() => {
+            setTasks(updatedTasks);
+        }, 200);
     };
 
     // Handle adding a new task when clicked
