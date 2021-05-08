@@ -1,9 +1,11 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ handleAddNewTask }) => {
     return (
         <div className="footer-container">
-            <p>+ ADD NEW</p>
+            <p className="add-new-button" onClick={handleAddNewTask}>
+                + ADD NEW TASK
+            </p>
         </div>
     );
 };

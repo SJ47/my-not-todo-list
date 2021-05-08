@@ -33,11 +33,12 @@ body {
 }
 
 .app-container {
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     margin: 0 auto;
     width: 375px;
     height: 90vh;
     background: var(--tertiary-color);
+    box-shadow: var(--box-shadow-light);
 }
 
 /*****************/
@@ -68,7 +69,7 @@ body {
 }
 
 .task-container {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     width: 90%;
     margin: 1em auto;
     text-align: left;
@@ -78,6 +79,7 @@ body {
     /* overflow: hidden; */
     background: white;
     padding-top: 0.2em;
+    box-shadow: var(--box-shadow-left-to-right);
 }
 
 .task-text {
@@ -102,11 +104,21 @@ body {
 /*****************/
 .footer-container {
     margin: 0 auto;
-    padding: 0.5em 0;
+    /* padding: 0.5em 0; */
     font-weight: bold;
     font-size: 1.2rem;
     color: white;
     background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+}
+
+.add-new-button {
+    /* border: 1px solid red; */
+    box-shadow: var(--box-shadow-light);
+    width: fit-content;
+    padding: 1em;
+    cursor: pointer;
 }
 
 /******************/

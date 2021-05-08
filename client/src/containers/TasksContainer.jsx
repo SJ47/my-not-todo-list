@@ -14,10 +14,10 @@ const TasksContainer = () => {
     }, []);
 
     // handle when unchecked task is clicked in main task window
-    const handleClickTask = (selectedTaskId) => {
+    const handleClickTask = (selectedTask) => {
         // Map through tasks and toggle task status
         const updatedTasks = tasks.map((task) => {
-            if (task.id === selectedTaskId) {
+            if (task.id === selectedTask.id) {
                 task.status = !task.status;
             }
             return task;
@@ -25,12 +25,29 @@ const TasksContainer = () => {
         setTasks(updatedTasks);
     };
 
+    // Handle adding a new task when clicked
+    const handleAddNewTask = () => {
+        const emptyTask = {
+            id: tasks.length + 1,
+            description: "New Empty Task",
+            status: false,
+        };
+
+        setTasks([...tasks, emptyTask]);
+
+        // Code below for posting to DB file when ready
+
+        // TasksService.postTask(emptyTask).then((tasks) =>
+        //     setTasks([...tasks, emptyTask])
+        // );
+    };
+
     return (
         <div className="app-container">
             <Header />
             <TaskList tasks={tasks} handleClickTask={handleClickTask} />
             <CompletedTaskList />
-            <Footer />
+            <Footer handleAddNewTask={handleAddNewTask} />
         </div>
     );
 };
