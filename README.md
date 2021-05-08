@@ -2,9 +2,7 @@
 
 # Brief
 
-# A Simple ToDo web app which may be used as a simple introduction to React Native in the extensions
-
-Description: Create a Covid friendly web app to allow customers at a bar / pub / to place food and drink orders from their table.
+Description: Create a Simple ToDo web app which may be used as an introduction to React Native in the extensions
 
 ## MVP
 
