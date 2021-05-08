@@ -1,5 +1,5 @@
-// const baseURL = 'http://localhost:5000/api/tasks/'
-const baseURL = './tasks.json'
+const baseURL = 'http://localhost:5000/api/tasks/'
+// const baseURL = './tasks.json'
 
 const TasksService = {
     getTasks() {

@@ -19,12 +19,12 @@ const CompletedTask = ({ task, handleClickTask, handleDeleteTask }) => {
             </span>
             <input
                 type="checkbox"
-                id={task.id}
+                id={task._id}
                 name="task"
                 defaultChecked={task.status}
                 onClick={onClickTask}
             />
-            <label htmlFor={task.id} className="radio-label"></label>
+            <label htmlFor={task._id} className="radio-label"></label>
         </div>
     );
 };

@@ -5,7 +5,7 @@ const TaskList = ({ tasks, handleClickTask, handleUpdateTask }) => {
     const allTasks = tasks.map((task) => {
         return (
             <Task
-                key={task.id}
+                key={task._id}
                 task={task}
                 handleClickTask={handleClickTask}
                 handleUpdateTask={handleUpdateTask}
@@ -13,12 +13,12 @@ const TaskList = ({ tasks, handleClickTask, handleUpdateTask }) => {
         );
     });
 
-    const unCcompletedTasks = allTasks.filter((unCompletedTask) => {
+    const unCompletedTasks = allTasks.filter((unCompletedTask) => {
         // console.log(completedTask.props.task.status);
         return !unCompletedTask.props.task.status;
     });
 
-    return <div className="tasklist-container">{unCcompletedTasks}</div>;
+    return <div className="tasklist-container">{unCompletedTasks}</div>;
 };
 
 export default TaskList;

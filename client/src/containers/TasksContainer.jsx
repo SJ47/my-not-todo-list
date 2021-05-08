@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TaskList from "../components/TaskList";
 import TasksService from "../services/TasksService";
-import { useId } from "react-id-generator";
 
 const TasksContainer = () => {
     const [tasks, setTasks] = useState([]);
@@ -18,7 +17,7 @@ const TasksContainer = () => {
     const handleClickTask = (selectedTask) => {
         // Map through tasks and toggle task status
         const updatedTasks = tasks.map((task) => {
-            if (task.id === selectedTask.id) {
+            if (task._id === selectedTask._id) {
                 task.status = !task.status;
             }
             return task;
@@ -53,7 +52,7 @@ const TasksContainer = () => {
     const handleUpdateTask = (selectedTask) => {
         // Map through tasks and update the changed task
         const updatedTasks = tasks.map((task) => {
-            if (task.id === selectedTask.id) {
+            if (task._id === selectedTask._id) {
                 task.description = selectedTask.description;
             }
             return task;
@@ -63,7 +62,7 @@ const TasksContainer = () => {
 
     // Handle deleting a task
     const handleDeleteTask = (selectedTask) => {
-        setTasks(tasks.filter((task) => task.id !== selectedTask.id));
+        setTasks(tasks.filter((task) => task._id !== selectedTask._id));
     };
 
     return (
