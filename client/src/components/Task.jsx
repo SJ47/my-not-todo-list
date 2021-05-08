@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // const Task = ({ description, status, num, handleClickTask }) => {
-const Task = ({ task, handleClickTask }) => {
+const Task = ({ task, handleClickTask, handleUpdateTask }) => {
     const [desc, setDesc] = useState(task.description);
 
     // handle call to handleClickTask passing back the id of the task
@@ -15,11 +15,13 @@ const Task = ({ task, handleClickTask }) => {
         console.log(desc);
     };
 
+    // handle updating the task in state after form submitted or tabbed out field and if chance of description
     const handleDescriptionSubmit = (event) => {
         event.preventDefault();
         if (task.description !== desc) {
-            console.log("submitted text: ", desc);
-            // update the task back in taskscontainer similar to handleClickTask
+            task.description = desc;
+            handleUpdateTask(task);
+            console.log("called handleUpdateTask");
         }
     };
 

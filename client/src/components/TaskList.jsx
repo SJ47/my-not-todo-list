@@ -1,10 +1,15 @@
 import React from "react";
 import Task from "./Task";
 
-const TaskList = ({ tasks, handleClickTask }) => {
+const TaskList = ({ tasks, handleClickTask, handleUpdateTask }) => {
     const listOfTasks = tasks.map((task) => {
         return (
-            <Task key={task.id} task={task} handleClickTask={handleClickTask} />
+            <Task
+                key={task.id}
+                task={task}
+                handleClickTask={handleClickTask}
+                handleUpdateTask={handleUpdateTask}
+            />
         );
     });
 

@@ -42,10 +42,26 @@ const TasksContainer = () => {
         // );
     };
 
+    // Handle updating a task
+    const handleUpdateTask = (selectedTask) => {
+        // Map through tasks and update the changed task
+        const updatedTasks = tasks.map((task) => {
+            if (task.id === selectedTask.id) {
+                task.description = selectedTask.description;
+            }
+            return task;
+        });
+        setTasks(updatedTasks);
+    };
+
     return (
         <div className="app-container">
             <Header />
-            <TaskList tasks={tasks} handleClickTask={handleClickTask} />
+            <TaskList
+                tasks={tasks}
+                handleClickTask={handleClickTask}
+                handleUpdateTask={handleUpdateTask}
+            />
             <CompletedTaskList />
             <Footer handleAddNewTask={handleAddNewTask} />
         </div>
