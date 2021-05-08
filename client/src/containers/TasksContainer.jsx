@@ -13,10 +13,22 @@ const TasksContainer = () => {
         TasksService.getTasks().then((tasks) => setTasks(tasks));
     }, []);
 
+    // handle when unchecked task is clicked in main task window
+    const handleClickTask = (selectedTaskId) => {
+        // Map through tasks and toggle task status
+        const updatedTasks = tasks.map((task) => {
+            if (task.id === selectedTaskId) {
+                task.status = !task.status;
+            }
+            return task;
+        });
+        setTasks(updatedTasks);
+    };
+
     return (
         <div className="app-container">
             <Header />
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} handleClickTask={handleClickTask} />
             <CompletedTaskList />
             <Footer />
         </div>
