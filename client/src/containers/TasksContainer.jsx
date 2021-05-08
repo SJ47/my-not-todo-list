@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TaskList from "../components/TaskList";
 import TasksService from "../services/TasksService";
+import { useId } from "react-id-generator";
 
 const TasksContainer = () => {
     const [tasks, setTasks] = useState([]);
@@ -27,8 +28,12 @@ const TasksContainer = () => {
 
     // Handle adding a new task when clicked
     const handleAddNewTask = () => {
+        // Likely change approach to ID when using MongoDb to get unique ID keys
+        const newId = Date.now();
+
         const emptyTask = {
-            id: tasks.length + 1,
+            // id: tasks.length + 1,
+            id: newId,
             description: "New Empty Task",
             status: false,
         };
@@ -54,6 +59,11 @@ const TasksContainer = () => {
         setTasks(updatedTasks);
     };
 
+    // Handle deleting a task
+    const handleDeleteTask = (selectedTask) => {
+        setTasks(tasks.filter((task) => task.id !== selectedTask.id));
+    };
+
     return (
         <div className="app-container">
             <Header />
@@ -62,7 +72,11 @@ const TasksContainer = () => {
                 handleClickTask={handleClickTask}
                 handleUpdateTask={handleUpdateTask}
             />
-            <CompletedTaskList />
+            <CompletedTaskList
+                tasks={tasks}
+                handleClickTask={handleClickTask}
+                handleDeleteTask={handleDeleteTask}
+            />
             <Footer handleAddNewTask={handleAddNewTask} />
         </div>
     );

@@ -12,7 +12,7 @@ const Task = ({ task, handleClickTask, handleUpdateTask }) => {
     // handle changing text in the input field as description is typed up
     const handleDescriptionChange = (event) => {
         setDesc(event.target.value);
-        console.log(desc);
+        // console.log(desc);
     };
 
     // handle updating the task in state after form submitted or tabbed out field and if chance of description
@@ -21,7 +21,7 @@ const Task = ({ task, handleClickTask, handleUpdateTask }) => {
         if (task.description !== desc) {
             task.description = desc;
             handleUpdateTask(task);
-            console.log("called handleUpdateTask");
+            // console.log("called handleUpdateTask");
         }
     };
 

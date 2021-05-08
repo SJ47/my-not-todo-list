@@ -82,21 +82,42 @@ body {
     box-shadow: var(--box-shadow-left-to-right);
 }
 
+.task-container:focus-within {
+    border: 3px dashed rgba(23, 147, 52, 0.6);
+}
+
 .task-text {
     display: inline-block;
-    max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    border: 0;
+    outline: none;
+    width: 100%;
+    margin: 0.5em 0.5em;
 }
 
 /**********************/
 /* COMPLETED TASKLIST */
 /**********************/
 .completed-tasklist-container {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     width: 90%;
     margin: 1em auto;
+}
+
+.completed-task {
+    background: orange;
+}
+
+.completed-task-container {
+    text-align: left;
+}
+
+.completed-task-description {
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    padding-left: 0.8em;
 }
 
 /*****************/
