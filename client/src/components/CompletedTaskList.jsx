@@ -14,11 +14,15 @@ const CompletedTaskList = ({ tasks, handleClickTask, handleDeleteTask }) => {
     });
 
     const completedTasks = allTasks.filter((completedTask) => {
-        // console.log(completedTask.props.task.status);
         return completedTask.props.task.status;
     });
 
-    return <div className="completed-tasklist-container">{completedTasks}</div>;
+    return (
+        <div className="completed-tasklist-container">
+            <h4 className="tasks-header">Completed tasks</h4>
+            {completedTasks}
+        </div>
+    );
 };
 
 export default CompletedTaskList;

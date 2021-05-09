@@ -27,3 +27,5 @@ A customer should be able to:
 -   Mobile / React Native version of app
 -   Login/authentication to ToDo app
 -   Mobile version can swipe left on task to DELETE from main list
+
+<img src="https://github.com/SJ47/my-not-todo-list/blob/main/client/src/screenshot.png">

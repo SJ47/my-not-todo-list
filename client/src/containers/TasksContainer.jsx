@@ -15,16 +15,19 @@ const TasksContainer = () => {
 
     // handle when unchecked task is clicked in main task window
     const handleClickTask = (selectedTask) => {
-        // Map through tasks and toggle task status
-        const updatedTasks = tasks.map((task) => {
-            if (task._id === selectedTask._id) {
-                task.status = !task.status;
-            }
-            return task;
+        selectedTask.status = !selectedTask.status;
+        TasksService.updateTask(selectedTask).then(() => {
+            // Map through tasks and update the changed task
+            const updatedTasks = tasks.map((task) => {
+                if (task._id === selectedTask._id) {
+                    task.status = selectedTask.status;
+                }
+                return task;
+            });
+            setTimeout(() => {
+                setTasks(updatedTasks);
+            }, 200);
         });
-        setTimeout(() => {
-            setTasks(updatedTasks);
-        }, 200);
     };
 
     // Handle adding a new task when clicked.  Add empty default task to DB then add to state.  Adding to DB will return new id for task.
@@ -42,7 +45,6 @@ const TasksContainer = () => {
     // Handle updating a task.
     const handleUpdateTask = (selectedTask) => {
         TasksService.updateTask(selectedTask).then(() => {
-            // console.log("UPDATE TASK: ");
             // Map through tasks and update the changed task
             const updatedTasks = tasks.map((task) => {
                 if (task._id === selectedTask._id) {

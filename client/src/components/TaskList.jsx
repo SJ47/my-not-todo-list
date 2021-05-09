@@ -14,11 +14,15 @@ const TaskList = ({ tasks, handleClickTask, handleUpdateTask }) => {
     });
 
     const unCompletedTasks = allTasks.filter((unCompletedTask) => {
-        // console.log(completedTask.props.task.status);
         return !unCompletedTask.props.task.status;
     });
 
-    return <div className="tasklist-container">{unCompletedTasks}</div>;
+    return (
+        <div className="tasklist-container">
+            <h4 className="tasks-header">Open tasks</h4>
+            {unCompletedTasks}
+        </div>
+    );
 };
 
 export default TaskList;
