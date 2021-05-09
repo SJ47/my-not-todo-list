@@ -34,9 +34,10 @@ body {
 
 .app-container {
     margin: 0 auto;
-    /* width: 375px; */
-    width: 100vw;
-    height: 100vh;
+    width: 375px;
+    height: 667px;
+    /* width: 100vw; */
+    /* height: 100vh; */
 
     background: var(--tertiary-color);
     box-shadow: var(--box-shadow-light);
