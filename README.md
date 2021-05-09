@@ -2,7 +2,9 @@
 
 # Brief
 
-Description: Create a Simple ToDo web app which may be used as an introduction to React Native in the extensions
+Description: Create a Simple ToDo web app which may be used as an introduction to React Native in the extensions.
+
+Tech stack: MERN
 
 ## MVP
 
