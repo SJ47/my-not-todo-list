@@ -8,25 +8,35 @@ Description: Create a Simple ToDo web app which may be used as an introduction t
 
 A customer should be able to:
 
--   [x] Mobile first design
--   [x] Tasks can be added
--   [x] Tasks can be edited (by typing over exist task)
--   [x] ask can be marked as completed
--   [x] Completed tasks can be unchecked by pressing Check mark to put back as active task
--   [x] Completed task can be deleted
--   [x] Completed tasks are moved to completed Tasks window
--   [x] Completed task has strike through or feint or both
+:white_check_mark:&nbsp; Mobile first design
+
+:white_check_mark:&nbsp; Tasks can be added
+
+:white_check_mark:&nbsp; Tasks can be edited (by typing over exist task)
+
+:white_check_mark:&nbsp; Task can be marked as completed
+
+:white_check_mark:&nbsp; Completed tasks can be unchecked by pressing Check mark to put back as active task
+
+:white_check_mark:&nbsp; Completed task can be deleted
+
+:white_check_mark:&nbsp; Completed tasks are moved to completed Tasks window
+
+:white_check_mark:&nbsp; Completed task has strike through or feint or both
 
 ## Extensions
 
--   [x] Tasks are saved to a backend database using MongoDB
--   [ ] Move backend DB to the cloud eg. MongoDB Atlas so it can be accessed from multiple devices
+:white_check_mark:&nbsp; Tasks are saved to a backend database using MongoDB
+
+❌ &nbsp;Move backend DB to the cloud eg. MongoDB Atlas so it can be accessed from multiple devices
 
 ## Advanced Extensions
 
--   [ ] Mobile / React Native version of app
--   [ ] Login/authentication to ToDo app
--   [ ] Mobile version can swipe left on task to DELETE from main list
+❌ &nbsp;Mobile / React Native version of app
+
+❌ &nbsp;Login/authentication to ToDo app
+
+❌ &nbsp;Mobile version can swipe left on task to DELETE from main list
 
 ## Screenshot of App
 
