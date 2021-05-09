@@ -42,4 +42,4 @@ A customer should be able to:
 
 ## Screenshot of App
 
-<img src="https://github.com/SJ47/my-not-todo-list/blob/main/client/src/screenshot.png">
+<img src="https://github.com/SJ47/my-not-todo-list/blob/main/client/src/screenshot.png" width="400">
