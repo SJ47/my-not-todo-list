@@ -33,7 +33,7 @@ const TasksContainer = () => {
     // Handle adding a new task when clicked.  Add empty default task to DB then add to state.  Adding to DB will return new id for task.
     const handleAddNewTask = () => {
         const emptyTask = {
-            description: "New Empty MongoDB Task",
+            description: "New Task",
             status: false,
         };
 
