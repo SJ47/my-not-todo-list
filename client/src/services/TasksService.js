@@ -1,5 +1,12 @@
 // const baseURL = '/api/tasks'
-const baseURL = 'http://localhost:5000/api/tasks/'
+
+// user below for localhost
+// const baseURL = 'http://localhost:5000/api/tasks/'
+
+// use below for connecting to backend on Heroku
+const baseURL = "https://my-not-todo-list-backend.herokuapp.com/api/tasks/"
+
+// Use below if just reading from a local file
 // const baseURL = './tasks.json'
 
 const TasksService = {
