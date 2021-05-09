@@ -28,4 +28,6 @@ A customer should be able to:
 -   Login/authentication to ToDo app
 -   Mobile version can swipe left on task to DELETE from main list
 
+## Screenshot of App
+
 <img src="https://github.com/SJ47/my-not-todo-list/blob/main/client/src/screenshot.png">
