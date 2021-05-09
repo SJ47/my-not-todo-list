@@ -33,7 +33,6 @@ body {
 }
 
 .app-container {
-    /* border: 1px solid grey; */
     margin: 0 auto;
     width: 375px;
     height: 90vh;
@@ -44,12 +43,18 @@ body {
 /*****************/
 /* HEADER        */
 /*****************/
+h1 {
+    margin: auto;
+    text-align: center;
+}
+
 .header-container {
-    /* border: 1px solid red; */
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 3px solid rgba(128, 128, 128, 0.3);
+    box-shadow: var(--box-shadow-left-to-right);
     margin: 0 auto;
     width: 100%;
     color: grey;
+    margin-bottom: 0;
 }
 
 .header-score-through {
@@ -57,26 +62,49 @@ body {
     text-decoration-color: red;
 }
 
+.fa-times {
+    color: red;
+    position: relative;
+    left: -192px;
+    top: 5px;
+    font-size: 1.5em;
+}
+
+.fa-circle {
+    font-size: 0.6em;
+    opacity: 0.5;
+}
+
 /*****************/
 /* TASKLIST      */
 /*****************/
+.tasks-header {
+    margin: 0;
+    border-top: 3px solid green;
+    border-bottom: 3px solid green;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.1em 0.3em;
+    width: 100%;
+}
+
 .tasklist-container {
-    /* border: 1px solid blue; */
-    /* width: 90%; */
     margin: 1em auto;
-    height: 60%;
+    height: 40%;
     overflow: auto;
 }
 
 .task-container {
-    /* border: 1px solid purple; */
     width: 90%;
     margin: 1em auto;
     text-align: left;
     padding-left: 1em;
     padding-right: 3em;
     white-space: nowrap;
-    /* overflow: hidden; */
     background: white;
     padding-top: 0.2em;
     box-shadow: var(--box-shadow-left-to-right);
@@ -101,9 +129,9 @@ body {
 /* COMPLETED TASKLIST */
 /**********************/
 .completed-tasklist-container {
-    /* border: 1px solid orange; */
-    width: 90%;
     margin: 1em auto;
+    overflow: auto;
+    height: 30%;
 }
 
 .completed-task {
@@ -122,6 +150,7 @@ body {
 
 .fa-trash-alt {
     cursor: pointer;
+    padding-left: 1em;
 }
 
 /*****************/
@@ -129,7 +158,6 @@ body {
 /*****************/
 .footer-container {
     margin: 0 auto;
-    /* padding: 0.5em 0; */
     font-weight: bold;
     font-size: 1.2rem;
     color: white;
@@ -139,7 +167,6 @@ body {
 }
 
 .add-new-button {
-    /* border: 1px solid red; */
     box-shadow: var(--box-shadow-light);
     width: fit-content;
     padding: 1em;

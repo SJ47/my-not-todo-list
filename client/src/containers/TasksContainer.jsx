@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TaskList from "../components/TaskList";
 import TasksService from "../services/TasksService";
-import { useId } from "react-id-generator";
 
 const TasksContainer = () => {
     const [tasks, setTasks] = useState([]);
@@ -16,54 +15,52 @@ const TasksContainer = () => {
 
     // handle when unchecked task is clicked in main task window
     const handleClickTask = (selectedTask) => {
-        // Map through tasks and toggle task status
-        const updatedTasks = tasks.map((task) => {
-            if (task.id === selectedTask.id) {
-                task.status = !task.status;
-            }
-            return task;
+        selectedTask.status = !selectedTask.status;
+        TasksService.updateTask(selectedTask).then(() => {
+            // Map through tasks and update the changed task
+            const updatedTasks = tasks.map((task) => {
+                if (task._id === selectedTask._id) {
+                    task.status = selectedTask.status;
+                }
+                return task;
+            });
+            setTimeout(() => {
+                setTasks(updatedTasks);
+            }, 200);
         });
-        setTimeout(() => {
-            setTasks(updatedTasks);
-        }, 200);
     };
 
-    // Handle adding a new task when clicked
+    // Handle adding a new task when clicked.  Add empty default task to DB then add to state.  Adding to DB will return new id for task.
     const handleAddNewTask = () => {
-        // Likely change approach to ID when using MongoDb to get unique ID keys
-        const newId = Date.now();
-
         const emptyTask = {
-            // id: tasks.length + 1,
-            id: newId,
-            description: "New Empty Task",
+            description: "New Empty MongoDB Task",
             status: false,
         };
 
-        setTasks([...tasks, emptyTask]);
-
-        // Code below for posting to DB file when ready
-
-        // TasksService.postTask(emptyTask).then((tasks) =>
-        //     setTasks([...tasks, emptyTask])
-        // );
+        TasksService.postTask(emptyTask).then((savedTask) =>
+            setTasks([...tasks, savedTask])
+        );
     };
 
-    // Handle updating a task
+    // Handle updating a task.
     const handleUpdateTask = (selectedTask) => {
-        // Map through tasks and update the changed task
-        const updatedTasks = tasks.map((task) => {
-            if (task.id === selectedTask.id) {
-                task.description = selectedTask.description;
-            }
-            return task;
+        TasksService.updateTask(selectedTask).then(() => {
+            // Map through tasks and update the changed task
+            const updatedTasks = tasks.map((task) => {
+                if (task._id === selectedTask._id) {
+                    task.description = selectedTask.description;
+                }
+                return task;
+            });
+            setTasks(updatedTasks);
         });
-        setTasks(updatedTasks);
     };
 
-    // Handle deleting a task
+    // Handle deleting a task.  Delete task from DB then delete from state.
     const handleDeleteTask = (selectedTask) => {
-        setTasks(tasks.filter((task) => task.id !== selectedTask.id));
+        TasksService.deleteTask(selectedTask._id).then(() => {
+            setTasks(tasks.filter((task) => task._id !== selectedTask._id));
+        });
     };
 
     return (

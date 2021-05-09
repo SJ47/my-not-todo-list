@@ -12,7 +12,6 @@ const Task = ({ task, handleClickTask, handleUpdateTask }) => {
     // handle changing text in the input field as description is typed up
     const handleDescriptionChange = (event) => {
         setDesc(event.target.value);
-        // console.log(desc);
     };
 
     // handle updating the task in state after form submitted or tabbed out field and if chance of description
@@ -21,7 +20,6 @@ const Task = ({ task, handleClickTask, handleUpdateTask }) => {
         if (task.description !== desc) {
             task.description = desc;
             handleUpdateTask(task);
-            // console.log("called handleUpdateTask");
         }
     };
 
@@ -37,15 +35,14 @@ const Task = ({ task, handleClickTask, handleUpdateTask }) => {
                     className="task-text"
                     onChange={handleDescriptionChange}
                 />
-                {/* <span className="task-text">{description}</span> */}
                 <input
                     type="checkbox"
-                    id={task.id}
+                    id={task._id}
                     name="task"
                     defaultChecked={task.status}
                     onClick={onClickTask}
                 />
-                <label htmlFor={task.id} className="radio-label"></label>
+                <label htmlFor={task._id} className="radio-label"></label>
             </form>
         </div>
     );
