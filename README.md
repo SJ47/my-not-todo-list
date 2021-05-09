@@ -30,7 +30,7 @@ A customer should be able to:
 
 :white_check_mark:&nbsp; Tasks are saved to a backend database using MongoDB
 
-❌ &nbsp;Move backend DB to the cloud eg. MongoDB Atlas so it can be accessed from multiple devices
+:white_check_mark:&nbsp; Move backend DB to the cloud eg. MongoDB Atlas so it can be accessed from multiple devices
 
 ## Advanced Extensions
 
