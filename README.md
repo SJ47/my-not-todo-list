@@ -34,6 +34,8 @@ A customer should be able to:
 
 ## Advanced Extensions
 
+:white_check_mark:&nbsp; Convert Node and Express to Netlify Serverless Functions
+
 ❌ &nbsp;Mobile / React Native version of app
 
 ❌ &nbsp;Login/authentication to ToDo app
